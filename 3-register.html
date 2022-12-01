@@ -1,0 +1,338 @@
+<html>
+
+<head>
+    <title>SiuShop - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <!---------- Header ---------->
+    <header class="header">
+        <div class="grid wide grid-cols-6 gap-x-8 h-100">
+            <!-- LOGO -->
+            <div class="col-span-1 d-flex align-center justify-center">
+                <div class="logo-box">
+                    <img src="assets/img/logo.png" />
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="col-span-3 d-flex align-center">
+                <form action="/siuShop_war_exploded/search-product" method="get" class="form form-search ml-8">
+                    <div class="form-group form-search__group">
+                        <input type="text" id="search" name="search" class="form-control"
+                            placeholder="Nhập từ khóa..." />
+                        <button type="submit" class="form-search__icon">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- HEADER LEFT -->
+            <div class="col-span-2 d-flex align-center justify-between">
+                <ul class="account d-flex justify-center">
+                    <!-- NAV LOGGED IN -->
+                    <div class="d-none">
+                        <li class="account-item">
+                            <a href="#" class="account-link sign-up">Order</a>
+                        </li>
+                        <li class="account-item">
+                            <a href="#" class="account-link sign-in">Logout</a>
+                        </li>
+                    </div>
+
+                    <!-- LOGIN ACTIONS -->
+                    <li class="account-item">
+                        <a href="register.jsp" class="account-link sign-up">Đăng ký</a>
+                    </li>
+                    <li class="account-item"><span class="separate-characters">/</span></li>
+                    <li class="account-item">
+                        <a href="login.jsp" class="account-link sign-in">Đăng nhập</a>
+                    </li>
+
+                    <!-- LANGUAGE BUTTONS -->
+                    <li class="account-item">
+                        <select name="language" class="language border-none">
+                            <option value="VN">VN</option>
+                            <option value="EN">EN</option>
+                        </select>
+                    </li>
+                </ul>
+
+                <!-- CART BUTTONS -->
+                <div class="cart d-flex align-center justify-center">
+                    <a href="/siuShop_war_exploded/cart-list" class="cart-icon">
+                        <i class="fas fa-cart-plus"></i>
+                        <span style="background: #ffb600" class="fw-bold text-white">10</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-------- End Header -------->
+
+    <!---------- Navigation ---------->
+    <nav class="nav">
+        <div class="grid wide grid-cols-12 gap-x-8 h-100">
+            <!-- Categories -->
+            <div class="col-span-3">
+                <div class="category d-flex align-center justify-between pl-6 pr-4 border h-100">
+                    <h4 class="category-heading">Danh mục</h4>
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+            </div>
+
+            <div class="col-span-9 d-flex justify-between">
+                <ul class="nav-list d-flex justify-start align-center">
+                    <!-- LIST ITEMS -->
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/contact">Liên hệ chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/search">Tìm kiếm</a>
+                    </li>
+
+                    <!-- ADMIN ITEMS -->
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/my-store">Sản phẩm của tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/new-product">Đăng sản phẩm</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/users?action=getAll">Users</a>
+                    </li>
+                </ul>
+
+                <!-- PRICE BUTTONS -->
+                <div class="nav-right">
+                    <a class="no-underline" href="">NẠP TIỀN<i class="fas fa-dollar-sign"></i> </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-------- End Navigation -------->
+
+    <!-- Main -->
+    <main class="main">
+        <div class="grid wide grid-cols-12 gap-x-8">
+            <!-- BREADCRUMB -->
+            <div class="col-span-12">
+                <div class="breadcrumd d-flex justify-start align-center">
+                    <a href="/siuShop_war_exploded/home" class="breadcrumd-link active">Trang chủ</a>
+                    <span class="separate-characters pl-1">/</span>
+                    <a href="/siuShop_war_exploded/home" class="breadcrumd-link">siuShop Online</a>
+                </div>
+            </div>
+
+            <!-- Data -->
+            <div class="col-span-12 laber-themes mt-3">
+                <!-- Title  -->
+                <h4
+                  class="tabs-title fz-md text-upercase py-4 border-bottom pl-12 text-normal bg-white"
+                >
+                  Tạo tài khoản mới
+                </h4>
+      
+                <!-- FORM -->
+                <div class="grid grid-cols-12 bg-white mt-4 mb-8">
+                    <!-- Form title -->
+                  <div class="col-span-12 py-4 px-4">
+                    <span class="text-normal fz-small">Đã có một tài khoản? </span>
+                    <a
+                      href="login.jsp"
+                      class="text-normal fz-small text-decoration text-primary text-hover"
+                    >
+                      Thay vào đó hãy đăng nhập!
+                    </a>
+                  </div>
+      
+                  <!-- Form inputs -->
+                  <div class="mb-8 col-start-4 col-end-10">
+                    <form action="register" method="post" class="form px-8 py-1">
+
+                        <!-- FULL NAME -->
+                      <div class="form-group">
+                        <label for="name" class="form-label">Tên đầy đủ</label>
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="VD: Chìu Cắm Minh"
+                          class="form-control"
+                        />
+                      </div>
+      
+                      <!-- EMAIL -->
+                      <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input
+                          type="text"
+                          name="email"
+                          id="email"
+                          placeholder="VD: minhcc01.vn@gmail.com"
+                          class="form-control"
+                        />
+                      </div>
+      
+                      <!-- DATE OF BIRTH -->
+                      <div class="form-group">
+                        <label for="dateOfBirth" class="form-label">Ngày sinh</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          name="dateOfBirth"
+                          id="dateOfBirth"
+                          required
+                          min="1990-01-01"
+                          max="2010-12-12"
+                        />
+                      </div>
+      
+                      <!-- PASSWORD -->
+                      <div class="form-group">
+                        <label for="password" class="form-label">Mật khẩu</label>
+                        <input
+                          type="password"
+                          name="password"
+                          id="password"
+                          placeholder="Nhập mật khẩu"
+                          class="form-control flex-1"
+                        />
+                      </div>
+      
+                      <!-- SUBMIT BUTTON -->
+                      <div class="form-group py-4">
+                        <input
+                          type="submit"
+                          value="Đăng Ký"
+                          class="form-control bg-success fz-md text-white cursor-pointer"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="grid wide grid-cols-4 gap-y-4 gap-x-6">
+            <div class="footer-content">
+                <h3 class="footer-heading">Sản phẩm</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Giảm giá</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Sản phẩm mới</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Bán chạy nhất</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3 class="footer-heading">Thông tin công ty</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Điều khoản và điều kiện sử dụng</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Giới thiệu</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3 class="footer-heading">Tài khoản của bạn</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Thông tin tài khoản</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Đơn hàng</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Địa chỉ</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <div class="footer-content-body">
+                    <h3 class="footer-heading">Thông tin cửa hàng</h3>
+                    <p class="address">
+                        <span>
+                            <i class="fas fa-home"></i>
+                            Địa chỉ:
+                        </span>
+                    <ul class="address-list pl-6">
+                        <li class="address-item">Hà Nội: 203 Xã Đàn</li>
+                        <li class="address-item">Hồ Chí Minh: 125 Bis Hai bà Trưng, Q1</li>
+                        <li class="address-item">Đà Nẵng: 150 Hàm Nghi, Q Thanh Khê</li>
+                    </ul>
+                    </p>
+                    <p class="phone">
+                        <span>
+                            <i class="fas fa-phone"></i>
+                            Phone:
+                        </span>
+                        0387776243
+                    </p>
+                    <p class="email">
+                        <span>
+                            <i class="fas fa-envelope"></i>
+                            Email cho chúng tôi: </span>
+                        <a class="pl-6" href="">CSKH@snowshop.com.vn</a>
+                    </p>
+                </div>
+                <div class="footer-content-download">
+                    <h4 class="text-center py-1 text-primary fz-md text-upercase ">Tải ứng dụng MysNow</h4>
+                    <div class="d-flex justify-center align-center">
+                        <div class="d-flex flex-column">
+                            <a href="">
+                                <img width="125px" src="./img/android-app.png" alt="">
+                            </a>
+                            <a href="">
+                                <img width="125px" class="mt-2" src="./img/ios-app.png" alt="">
+                            </a>
+                        </div>
+                        <a href="">
+                            <img width="125px" src="./img/bima-QR.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-4">
+                <div class="tags">
+                    <div class="tags-category d-flex justify-start align-center">
+                        <span class="tags-title">Mua sim</span>
+                        <span class="tags-inner">
+                            <a href="">Siêu data sim 4g</a>
+                            <a href="">sieu data sim 4g</a>
+                        </span>
+                    </div>
+
+                    <div class="tags-content text-center">
+                        <p class="fw-bold">Công ty cổ phần viễn thông sNow</p>
+                        <p>Địa chỉ: Tầng 6, Tòa nhà King Building, số 7 Phố Chùa Bộc, Phường Quang Trung, Quận Đống Đa,
+                            Thành phố Hà Nội.</p>
+                        <p>Tổng đài hỗ trợ: 0921667667 Email : CSKH@vietnamobile.com.vn</p>
+                        <p>Mã số doanh nghiệp: 0107429715, đăng ký lần đầu ngày 12/5/2016, đăng ký thay đổi lần thứ 3
+                            ngày 23/4/2019, cấp bởi Sở KHĐT thành phố Hà Nội.</p>
+                        <img width="200px" src="./img/logoSaleNoti.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom col-span-4">
+                <div class="grid wide grid-cols-2 gap-8">
+                    <div class="copyright">
+                        <span>© 2019 </span> <a href="">sNow VN</a>.
+                        <span>All Right Reserved</span>
+                    </div>
+                    <div class="paypal">
+                        <img src="./img/phuong-thuc-tt-new.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
