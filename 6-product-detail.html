@@ -1,0 +1,531 @@
+<html>
+
+<head>
+    <title>SiuShop - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+
+<body>
+    <!---------- Header ---------->
+    <header class="header">
+        <div class="grid wide grid-cols-6 gap-x-8 h-100">
+            <!-- LOGO -->
+            <div class="col-span-1 d-flex align-center justify-center">
+                <div class="logo-box">
+                    <img src="assets/img/logo.png" />
+                </div>
+            </div>
+
+            <!-- SEARCH -->
+            <div class="col-span-3 d-flex align-center">
+                <form action="/siuShop_war_exploded/search-product" method="get" class="form form-search ml-8">
+                    <div class="form-group form-search__group">
+                        <input type="text" id="search" name="search" class="form-control"
+                            placeholder="Nhập từ khóa..." />
+                        <button type="submit" class="form-search__icon">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- HEADER LEFT -->
+            <div class="col-span-2 d-flex align-center justify-between">
+                <ul class="account d-flex justify-center">
+                    <!-- NAV LOGGED IN -->
+                    <div class="d-none">
+                        <li class="account-item">
+                            <a href="#" class="account-link sign-up">Order</a>
+                        </li>
+                        <li class="account-item">
+                            <a href="#" class="account-link sign-in">Logout</a>
+                        </li>
+                    </div>
+
+                    <!-- LOGIN ACTIONS -->
+                    <li class="account-item">
+                        <a href="register.jsp" class="account-link sign-up">Đăng ký</a>
+                    </li>
+                    <li class="account-item"><span class="separate-characters">/</span></li>
+                    <li class="account-item">
+                        <a href="login.jsp" class="account-link sign-in">Đăng nhập</a>
+                    </li>
+
+                    <!-- LANGUAGE BUTTONS -->
+                    <li class="account-item">
+                        <select name="language" class="language border-none">
+                            <option value="VN">VN</option>
+                            <option value="EN">EN</option>
+                        </select>
+                    </li>
+                </ul>
+
+                <!-- CART BUTTONS -->
+                <div class="cart d-flex align-center justify-center">
+                    <a href="/siuShop_war_exploded/cart-list" class="cart-icon">
+                        <i class="fas fa-cart-plus"></i>
+                        <span style="background: #ffb600" class="fw-bold text-white">10</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-------- End Header -------->
+
+    <!---------- Navigation ---------->
+    <nav class="nav">
+        <div class="grid wide grid-cols-12 gap-x-8 h-100">
+            <!-- Categories -->
+            <div class="col-span-3">
+                <div class="category d-flex align-center justify-between pl-6 pr-4 border h-100">
+                    <h4 class="category-heading">Danh mục</h4>
+                    <span><i class="fas fa-bars"></i></span>
+                </div>
+            </div>
+
+            <div class="col-span-9 d-flex justify-between">
+                <ul class="nav-list d-flex justify-start align-center">
+                    <!-- LIST ITEMS -->
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/home">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/contact">Liên hệ chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/search">Tìm kiếm</a>
+                    </li>
+
+                    <!-- ADMIN ITEMS -->
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/my-store">Sản phẩm của tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/new-product">Đăng sản phẩm</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link no-underline" href="/siuShop_war_exploded/users?action=getAll">Users</a>
+                    </li>
+                </ul>
+
+                <!-- PRICE BUTTONS -->
+                <div class="nav-right">
+                    <a class="no-underline" href="">NẠP TIỀN<i class="fas fa-dollar-sign"></i> </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-------- End Navigation -------->
+
+    <!-- Main -->
+    <main class="main">
+        <div class="grid wide grid-cols-12 gap-x-8">
+            <!-- BREADCRUMB -->
+            <div class="col-span-12">
+                <div class="breadcrumd d-flex justify-start align-center">
+                    <a href="/siuShop_war_exploded/home" class="breadcrumd-link active">Trang chủ</a>
+                    <span class="separate-characters pl-1">/</span>
+                    <a href="/siuShop_war_exploded/home" class="breadcrumd-link">siuShop Online</a>
+                </div>
+            </div>
+
+            <!-- BANNER -->
+            <div class="col-span-3">
+                <div class="banner">
+                    <img width="100%" src="./assets/img/banner1.png" alt="Banner">
+                </div>
+            </div>
+
+            <!-- Data -->
+            <div class="col-span-9">
+                <div class="grid grid-cols-2 gap-x-4 bg-white py-4 px-4">
+                    <div class="product-img px-4 py-2">
+                        <div class="product-img-top">
+                            <img src="./assets/img/sieu-data-sim-4g.jpg" width="100%" alt="Product Image">
+                        </div>
+                        <div class="product-img-bottom">
+                            <ul class="product-img-list d-flex">
+                                <li class="product-img-item">
+                                    <img src="./assets/img/sieu-data-sim-4g.jpg" width="100%" alt="Product Image">
+                                </li>
+                                <li class="product-img-item ml-1">
+                                    <img src="./assets/img/sieu-data-sim-4g.jpg" width="100%" alt="Product Image">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-content">
+                        <h1 class="product-heading">TITLE: Lorem ipsum dolor sit amet. </h1>
+                        <div class="card-body product">
+
+
+                            <!-- RATING -->
+                            <span class="card-rating py-1">
+                                <div class="star-content d-flex">
+                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                    <div class="star"><i class="fas fa-star"></i></div>
+                                    <a href="" class="number text-decoration">(5 đánh giá)</a>
+                                </div>
+                            </span>
+
+                            <span class="text-normal fz-small py-1">Thương hiệu:
+                                <a class="text-decoration" href="/brand">Vietnamobile</a>
+                            </span>
+
+                            <div class="card-price">
+                                <span class="price fz-lg text-primary-dark">10 ₫</span>
+                                <div class="d-flex align-end">
+                                    <span class="regular-price">100 ₫</span> <span class="fz-md pl-1">-50%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-description-short">
+                            <b>SIM Siêu DATA</b> - Miễn phí 1 tháng, Free ship khi nhập mã <b>FREESHIP2020</b> cho đơn
+                            hàng 5 sim
+                        </div>
+
+                        <!-- PRODUCT ACTIONS -->
+                        <div class="product-action">
+                            <!-- Quantity -->
+                            <div class="product-add-to-cart d-flex">
+                                <span class="control-label fz-small pr-4">Số lượng: </span>
+                                <div class="product-quantity">
+                                    <span class="px-2 cursor-pointer" style="font-size: 2rem;">-</span>
+                                    <span class="px-2">1</span>
+                                    <span class="px-2 cursor-pointer" style="font-size: 2rem;">+</span>
+                                </div>
+                            </div>
+
+
+                            <!-- Amount -->
+                            <span class="product-availability fz-small d-block py-2 text-primary">
+                                Bạn không được mua quá 5 sim, hiện tại bạn đã mua: 1 sim
+                            </span>
+
+
+                            <!-- Phone -->
+                            <div class="product-number-choose mt-2 ml-1">
+                                <ul class="product-number-list">
+                                    <li class="product-number-item d-flex align-center">
+                                        <span class="btn border-radius-3 chooose-number-count mr-4">1</span>
+                                        <div
+                                            class="btn border-radius-4 chooose-number-action cursor-pointer border-none">
+                                            <span class="chooose-phone pr-4 fz-small">0387776243</span>
+                                            <a class="change-number text-primary-dark pl-4 fz-small">Chọn số khác</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- ACTIONS -->
+                            <div class="buy-now mt-5">
+                                <div class="d-flex align-center">
+                                    <a href="/siuShop_war_exploded/order-now?productId=${param.id}">
+                                        <span
+                                            class="btn bg-primary-light border-none text-white px-11 py-3 cursor-pointer">
+                                            Mua ngay
+                                        </span>
+                                    </a>
+                                    <a href="/siuShop_war_exploded/add-to-cart?id=${param.id}">
+                                        <span
+                                            class="btn bg-primary border-none ml-4 text-white px-3 py-3 cursor-pointer">
+                                            Thêm vào giỏ hàng
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SHARE BUTTONS -->
+                        <div class="social-sharing mt-5">
+                            <div class="d-flex align-center">
+                                <span class="fz-small">Chia sẻ:</span>
+                                <a class="btn border-radius-50 cursor-pointer ml-3"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a class="btn border-radius-50 cursor-pointer ml-2"><i class="fab fa-twitter"></i></a>
+                                <a class="btn border-radius-50 cursor-pointer ml-2"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+
+
+                        <!-- REASSURANCE -->
+                        <div class="grid grid-cols-1 bg-white mt-4">
+                            <div class="block-reassurance mt-5">
+                                <ul>
+                                    <li class="block-reassurance-item d-flex align-center py-3 border-bottom">
+                                        <img src="./img/ic_verified_user_black_36dp_1x.png" alt="">
+                                        <span class="pl-3 fz-small">Chính sách bảo mật (SSL thông tin sẽ được bảo
+                                            mật)</span>
+                                    </li>
+                                    <li class="block-reassurance-item d-flex align-center py-3">
+                                        <img src="./img/ic_local_shipping_black_36dp_1x.png" alt="">
+                                        <span class="pl-3 fz-small">Chính sách giao hàng (đảm bảo gia hàng đúng
+                                            hẹn)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESCRIPTION -->
+                <div class="tabs px-4">
+                    <h4 class="tabs-title fz-md text-upercase py-4 border-bottom">mô tả sản phẩm</h4>
+                    <p class="mt-1 mb-1 fz-small">Miễn phí vận chuyển với đơn hàng <b
+                            class="fz-small text-primary-dark">5 Sản phẩm thanh toán online</b> , áp dụng cho các sản
+                        phẩm sau: <b class="text-primary-dark fz-small">Siêu Sim Data 4G, Lướt mượt mà 1 tháng, Tám thả
+                            ga 1 tháng và Thánh Hi</b></p>
+                    <p class="mt-2 mb-3"><b class="fz-small text-primary-dark">Nhập ngay mã; FREESHIP2019</b></p>
+                    <p class="mt-2 mb-3"><b class="fz-small text-primary">SIÊU DATA SIM 4G - sản phẩm độc quyền trên
+                            Vietnamobile Online Shop!</b></p>
+                    <p class="mt-1 mb-1 fz-small text-normal">Với ưu thế là dòng SIM giá cạnh tranh nhất thị trường cùng
+                        dung lượng data vô địch đáp ứng mọi nhu cầu lướt web, xem phim, nghe nhạc…, Siêu Data SIM 4G
+                        Vietnamobile đang chiếm lĩnh tình cảm yêu mến của người tiêu dùng với nhiều ưu đãi hấp dẫn:</p>
+                    <p class="mt-4 mb-1 fz-small text-normal">Data tốc độ cao <b>30GB/tháng</b> (hết 30GB hạ băng thông
+                        128kbps)</p>
+                    <span class="mt-1 mb-2 fz-small text-normal">- Phí duy trì hàng tháng chỉ 30.000đ</span>
+
+                    <b class="fz-small d-block mt-4 mb-2">Cước phí cuộc gọi thoại & SMS:</b>
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li class="py-2 text-normal">Thoại nội mạng: 990đ/phút</li>
+                        <li class="py-2 text-normal">Thoại ngoại mạng: 1,500đ/phút </li>
+                        <li class="py-2 text-normal">TSMS liên mạng: 400đ/SMS</li>
+                    </ul>
+
+                    <b class="fz-small d-block mt-4 mb-2">Các thông tin khác:</b>
+                    <ul style="list-style: disc; margin-left: 20px;">
+                        <li class="py-2 text-normal">Gia hạn: Tự động gia hạn liên tục trong 60 ngày tiếp theo kể từ
+                            cuối chu kỳ hiện tại. Quá 60 ngày, gói cước sẽ bị hủy.
+                            Sau 60 ngày, nếu có nhu cầu tiếp tục sử dụng gói cước, quý khách đăng ký lại theo cú pháp:
+                            <i>DK BIGDATA gửi 345</i>
+                        </li>
+                        <li class="py-2 text-normal">Kiểm tra khuyến mại: *101#OK hoặc *102#OK.</li>
+                    </ul>
+                </div>
+
+                <!-- REVIEWS -->
+                <div class="grid grid-cols-1 mt-4">
+                    <!-- Comments -->
+                    <div class="product-comments-block py-3 bg-white">
+                        <!-- TITLE -->
+                        <div class="d-flex justify-between align-center text-normal fz-small px-4 py-5 border-bottom">
+                            <h6 class="title flex-1 fz-md mt-0 mb-0">Đánh giá và nhận xét</h6>
+                            <span class="open-comment-form cursor-pointer fz-small"><i class="fa fa-edit"></i>
+                                Nhận xét về sản phẩm</span>
+                        </div>
+
+                        <!-- COMMENT -->
+                        <div class="mod-reviews py-4 border-bottom">
+                            <div class="d-flex justify-between align-center px-2">
+                                <!-- Rating -->
+                                <span class="card-rating py-1">
+                                    <div class="star-content d-flex">
+                                        <div class="star star-on"><i class="fas fa-star"></i></div>
+                                        <div class="star star-on"><i class="fas fa-star"></i></div>
+                                        <div class="star star-on"><i class="fas fa-star"></i></div>
+                                        <div class="star star-on"><i class="fas fa-star"></i></div>
+                                        <div class="star"><i class="fas fa-star"></i></div>
+                                        <a href="" class="number text-decoration">(5 đánh giá)</a>
+                                    </div>
+                                </span>
+                                <!-- Time -->
+                                <div class="format-time-ago fz-min text-normal">19 tháng trước</div>
+                            </div>
+
+                            <!-- AUTHOR -->
+                            <div class="d-flex justify-start align-center px-2 mt-3">
+
+                                <span class="text-normal fz-small">bởi <span
+                                        class="fz-small text-normal">Khánh</span></span>
+                                <span class="d-flex justify-start align-center">
+                                    <img src="./img/TB1bOqBeb_I8KJjy1XaXXbsxpXa-30-32.png" alt=""
+                                        class="verity-img ml-2" width="12px">
+                                    <span class="verity fz-small text-normal ml-1 text-green">Đã xác minh</span>
+                                </span>
+                            </div>
+
+                            <!-- CONTENT -->
+                            <div class="item-content px-2 py-1">
+                                <span class="fz-small">Thực sự ok ko khá băn khoăn</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Other product -->
+                    <div class="laber-themes mt-4">
+                        <h4 class="tabs-title fz-md text-upercase py-4 border-bottom px-2 text-normal bg-white ">
+                            Bạn cũng có thể thích</h4>
+                        <div class="grid grid-cols-3 gap-8 mt-4 mb-8">
+
+                            <c:forEach var="product" items="${products}">
+                                <div class="col-span-1">
+                                    <div class="card">
+                                        <a href="/siuShop_war_exploded/product-details?id=${product.getId()}">
+                                            <div class="card-top">
+                                                <img src="img/${product.getImage()}" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="card-body">
+                                            <a href="/siuShop_war_exploded/product-details?id=${product.getId()}"
+                                                class="text-decoration">
+                                                <h4 class="card-name">TITLE: Lorem, ipsum dolor.</h4>
+                                            </a>
+                                            <div class="card-price">
+                                                <span class="price">10 ₫</span>
+                                                <span class="regular-price">1000 ₫</span>
+                                            </div>
+
+                                            <!-- RATING -->
+                                            <span class="card-rating">
+                                                <div class="star-content d-flex">
+                                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                                    <div class="star star-on"><i class="fas fa-star"></i></div>
+                                                    <div class="star"><i class="fas fa-star"></i></div>
+                                                    <div class="number">(5)</div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                        <div class="flag-on-sale">
+                                            <span>-50%</span>
+                                        </div>
+                                        <c:if test="${product.isExclusive()}">
+                                            <div class="label-flag">
+                                                <span>Độc quyền</span>
+                                            </div>
+                                        </c:if>
+                                    </div>
+                                </div>
+                            </c:forEach>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="grid wide grid-cols-4 gap-y-4 gap-x-6">
+            <div class="footer-content">
+                <h3 class="footer-heading">Sản phẩm</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Giảm giá</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Sản phẩm mới</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Bán chạy nhất</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3 class="footer-heading">Thông tin công ty</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Điều khoản và điều kiện sử dụng</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Giới thiệu</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <h3 class="footer-heading">Tài khoản của bạn</h3>
+                <ul class="footer-list">
+                    <li class="footer-item"><a href="" class="footer-link">Thông tin tài khoản</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Đơn hàng</a></li>
+                    <li class="footer-item"><a href="" class="footer-link">Địa chỉ</a></li>
+                </ul>
+            </div>
+            <div class="footer-content">
+                <div class="footer-content-body">
+                    <h3 class="footer-heading">Thông tin cửa hàng</h3>
+                    <p class="address">
+                        <span>
+                            <i class="fas fa-home"></i>
+                            Địa chỉ:
+                        </span>
+                    <ul class="address-list pl-6">
+                        <li class="address-item">Hà Nội: 203 Xã Đàn</li>
+                        <li class="address-item">Hồ Chí Minh: 125 Bis Hai bà Trưng, Q1</li>
+                        <li class="address-item">Đà Nẵng: 150 Hàm Nghi, Q Thanh Khê</li>
+                    </ul>
+                    </p>
+                    <p class="phone">
+                        <span>
+                            <i class="fas fa-phone"></i>
+                            Phone:
+                        </span>
+                        0387776243
+                    </p>
+                    <p class="email">
+                        <span>
+                            <i class="fas fa-envelope"></i>
+                            Email cho chúng tôi: </span>
+                        <a class="pl-6" href="">CSKH@snowshop.com.vn</a>
+                    </p>
+                </div>
+                <div class="footer-content-download">
+                    <h4 class="text-center py-1 text-primary fz-md text-upercase ">Tải ứng dụng MysNow</h4>
+                    <div class="d-flex justify-center align-center">
+                        <div class="d-flex flex-column">
+                            <a href="">
+                                <img width="125px" src="./img/android-app.png" alt="">
+                            </a>
+                            <a href="">
+                                <img width="125px" class="mt-2" src="./img/ios-app.png" alt="">
+                            </a>
+                        </div>
+                        <a href="">
+                            <img width="125px" src="./img/bima-QR.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-4">
+                <div class="tags">
+                    <div class="tags-category d-flex justify-start align-center">
+                        <span class="tags-title">Mua sim</span>
+                        <span class="tags-inner">
+                            <a href="">Siêu data sim 4g</a>
+                            <a href="">sieu data sim 4g</a>
+                        </span>
+                    </div>
+
+                    <div class="tags-content text-center">
+                        <p class="fw-bold">Công ty cổ phần viễn thông sNow</p>
+                        <p>Địa chỉ: Tầng 6, Tòa nhà King Building, số 7 Phố Chùa Bộc, Phường Quang Trung, Quận Đống Đa,
+                            Thành phố Hà Nội.</p>
+                        <p>Tổng đài hỗ trợ: 0921667667 Email : CSKH@vietnamobile.com.vn</p>
+                        <p>Mã số doanh nghiệp: 0107429715, đăng ký lần đầu ngày 12/5/2016, đăng ký thay đổi lần thứ 3
+                            ngày 23/4/2019, cấp bởi Sở KHĐT thành phố Hà Nội.</p>
+                        <img width="200px" src="./img/logoSaleNoti.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom col-span-4">
+                <div class="grid wide grid-cols-2 gap-8">
+                    <div class="copyright">
+                        <span>© 2019 </span> <a href="">sNow VN</a>.
+                        <span>All Right Reserved</span>
+                    </div>
+                    <div class="paypal">
+                        <img src="./img/phuong-thuc-tt-new.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
