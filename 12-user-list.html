@@ -135,85 +135,62 @@
 
             <!-- DATA  -->
             <div class="col-span-12">
-                <!-- Title -->
                 <h4 class="tabs-title fz-md text-upercase py-4 border-bottom pl-12 text-normal bg-white">
-                    Địa chỉ nhận hàng
+                    Danh sách tài khoản tồn tại trong hệ thống (${users != null ? users.size() : 0})
                 </h4>
+                <div class="bg-white mt-4 mb-8">
+                    <div class="mt-4 mb-8 col-start-4 col-end-10">
+                        <table class="w-100 py-2 px-2">
+                            <thead class="fz-md bg-dark text-white">
+                                <tr>
+                                    <th class="py-4">ID</th>
+                                    <th>Họ tên</th>
+                                    <th>Email</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Role</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                        <td class="py-3 text-center">
+                                            1 </td>
 
-                <!-- Table -->
-                <div class="grid grid-cols-12 bg-white mt-4 mb-8">
+                                        <td class="text-center">
+                                            FullName </td>
 
+                                        <td class="text-center">
+                                            minh@gmail.com </td>
 
-                    <!-- Table -->
-                    <div class="col-span-6">
-                        <div class="bg-white mt-4 mb-8">
-                            <h3 class="fz-md text-upercase py-4 pl-12 text-normal">Danh sách đơn
-                                hàng</h3>
-                            <div class="mt-8 mb-8 col-start-4 col-end-10">
-                                <div class="mx-8 px-8  border border-top border-bottom">
-                                    <h3>Title: Lorem ipsum dolor sit.</h3>
-                                    <span>10$</span>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquam.</p>
-                                </div>
+                                        <td class="py-3 text-center">
+                                            14/12/2001
+                                        </td>
 
-                                <div class="mx-8 px-8  border border-top border-bottom mt-4">
-                                    <h3>Title: Lorem ipsum dolor sit.</h3>
-                                    <span>10$</span>
-                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, aliquam.</p>
-                                </div>
-                            <p class="fz-md text-upercase py-4 pl-12 text-normal">Thành tiền: $100</p>
-                        </div>
-                        </div>
-                    </div>
+                                        <td class="py-3 text-center">
+                                            Admin
+                                        </td>
 
-                    <!-- FORM -->
-                    <div class="col-span-6">
-                        <div class="mt-4 mb-8 col-start-4 col-end-10 border-left">
-                            <h3 class="mx-0 my-0 fz-md text-upercase pt-4 pl-6 text-normal bg-white">Địa
-                                chỉ</h3>
-                            <form method="post" class="form px-8 py-1">
-                                <input class="d-none" type="text" name="productId" value="1">
+                                        <td class="text-center">
+                                            <a class="btn text-white cursor-pointer text-hover bg-hover bg-success text-md py-1 px-1"
+                                                href="/siuShop_war_exploded/users?action=edit&id=${user.getId()}">
+                                                Sửa
+                                            </a>
 
-                                <input class="d-none" type="number" name="quantity" value="10">
+                                            <span class="separate-characters pl-2 pr-2">/</span>
 
-                                <div class="form-group">
-                                    <label for="province" class="form-label">Tỉnh/TP: </label>
-                                    <input type="text" required name="province" id="province" placeholder="Nhập Tỉnh/TP"
-                                        class="form-control" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="district" class="form-label">Quận / Huyện</label>
-                                    <input type="text" required name="district" id="district"
-                                        placeholder="Nhập Quận/Huyện" class="form-control" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="ward" class="form-label">Phường / Xã</label>
-                                    <input type="text" required name="ward" id="ward" placeholder="Nhập Phường/Xã"
-                                        class="form-control" />
-                                </div>
-                                <div class="form-group mb-8">
-                                    <label for="address" class="form-label">Địa chỉ cụ thể</label>
-                                    <input type="text" required name="address" id="address" placeholder="Địa chỉ cụ thể"
-                                        class="form-control" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" value="Đặt Hàng"
-                                        class="form-control bg-primary fz-md text-white cursor-pointer" />
-                                </div>
-                            </form>
-                        </div>
+                                            <button onclick="if(confirm('Are you sure you want to continue')) {
+                                                    window.location = '/siuShop_war_exploded/users?action=delete&id=${user.getId()}'
+                                                    }"
+                                                class="btn bg-primary text-white cursor-pointer text-hover bg-hover text-md py-1 px-1">
+                                                Xóa
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
 
-
-                    </div>
-
-                    <!-- OTHER  -->
-                    <div class="col-span-12 py-6 border-top">
-                        <div class="text-center">
-                            <a href="/siuShop_war_exploded/cancel-order-address?productId=${productId}"
-                                class="text-decoration py-4 text-normal fz-md text-hover">
-                                Để đặt hàng sau
-                            </a>
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
